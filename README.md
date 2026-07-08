@@ -1,1 +1,1 @@
-![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=YOUR_TEXT_OR_URL)
+![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=[(https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt)])
