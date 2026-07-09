@@ -16,17 +16,30 @@
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
+            overflow-x: hidden;
         }
+
+        /* Задний фон по умолчанию размыт */
         .container {
             background-color: #161b22;
             border: 1px solid #30363d;
             border-radius: 12px;
             padding: 30px;
-            max-width: 450px;
+            max-width: 480px;
             width: 100%;
             text-align: center;
             box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            filter: blur(8px); /* Изначальное размытие контента */
+            pointer-events: none; /* Запрет кликов, пока не выбрана платформа */
+            transition: filter 0.4s ease;
         }
+
+        /* Класс, который убирает размытие после выбора */
+        .container.active {
+            filter: blur(0);
+            pointer-events: auto;
+        }
+
         h1 {
             color: #f0f6fc;
             font-size: 24px;
@@ -35,28 +48,77 @@
         .subtitle {
             color: #8b949e;
             font-size: 14px;
+            margin-bottom: 25px;
+        }
+        
+        /* Панель выбранной платформы сверху */
+        .platform-picker {
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 12px;
             margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .platform-label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #f0f6fc;
+        }
+        .platform-badge {
+            background-color: #1e293b;
+            border: 1px solid #1EBA60;
+            color: #1EBA60;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* Карточки подписок */
+        .subscription-list {
+            text-align: left;
         }
         .card {
             background-color: #21262d;
             border: 1px solid #30363d;
             border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-            text-align: left;
+            padding: 20px;
+            margin-bottom: 25px;
         }
         .card-title {
+            font-size: 18px;
             font-weight: bold;
             color: #f0f6fc;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
         .card-desc {
             color: #8b949e;
-            font-size: 13px;
-            margin-bottom: 15px;
+            font-size: 13.5px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .qr-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 12px;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 160px;
+            height: 160px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .qr-container img {
+            width: 160px;
+            height: 160px;
+            display: block;
         }
         .btn-happ {
             display: block;
@@ -68,6 +130,7 @@
             padding: 12px;
             border-radius: 6px;
             font-size: 15px;
+            box-shadow: 0 4px 12px rgba(30, 186, 96, 0.2);
             transition: background-color 0.2s, transform 0.1s;
         }
         .btn-happ:hover {
@@ -76,10 +139,77 @@
         .btn-happ:active {
             transform: scale(0.98);
         }
+
+        /* Стили приветственного оверлея / уведомления */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(13, 17, 23, 0.7);
+            backdrop-filter: blur(4px); /* Дополнительное размытие всего экрана */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        
+        .overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .modal {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        .modal-title {
+            color: #f0f6fc;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .modal-text {
+            color: #8b949e;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .btn-select {
+            background-color: #1EBA60;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+
+        .btn-select:hover {
+            background-color: #169a4e;
+        }
+
         footer {
-            margin-top: 25px;
+            margin-top: 30px;
             font-size: 13px;
             color: #8b949e;
+            border-top: 1px solid #30363d;
+            padding-top: 15px;
         }
         footer a {
             color: #58a6ff;
@@ -92,35 +222,79 @@
 </head>
 <body>
 
-<div class="container">
-    <h1>🌐 VLESS Подписки</h1>
-    <div class="subtitle">Выберите локацию для быстрого импорта в приложение Happ</div>
+<!-- УВЕДОМЛЕНИЕ С ВЫБОРОМ ПЛАТФОРМЫ -->
+<div class="overlay" id="platformOverlay">
+    <div class="modal">
+        <div class="modal-title">📱 Выберите платформу</div>
+        <div class="modal-text">Для генерации корректных ссылок быстрого импорта и работы QR-кодов, пожалуйста, подтвердите использование клиента Happ.</div>
+        <button class="btn-select" onclick="selectPlatform()">Использовать Happ Client</button>
+    </div>
+</div>
 
-    <!-- ФИНЛЯНДИЯ -->
-    <div class="card">
-        <div class="card-title">🇫🇮 Финляндия</div>
-        <div class="card-desc">Высокая скорость, европейские ресурсы, низкий пинг.</div>
-        <a class="btn-happ" href="clash://install-config?url=https://githubusercontent.com">Импортировать в Happ</a>
+<!-- ОСНОВНОЙ КОНТЕНТ (ИЗНАЧАЛЬНО РАЗМЫТ) -->
+<div class="container" id="mainContainer">
+    <h1>🌐 VLESS Конфигурации</h1>
+    <div class="subtitle">Быстрое подключение и управление прокси-нодами</div>
+
+    <div class="platform-picker">
+        <span class="platform-label">Текущая платформа:</span>
+        <span class="platform-badge">Happ Client</span>
     </div>
 
-    <!-- РОССИЯ -->
-    <div class="card">
-        <div class="card-title">🇷🇺 Россия</div>
-        <div class="card-desc">Обход блокировок, Госуслуги работают напрямую.</div>
-        <a class="btn-happ" href="clash://install-config?url=https://githubusercontent.com">Импортировать в Happ</a>
-    </div>
+    <div class="subscription-list">
 
-    <!-- НИДЕРЛАНДЫ -->
-    <div class="card">
-        <div class="card-title">🇳🇱 Нидерланды</div>
-        <div class="card-desc">Стабильный премиум-сервер в Амстердаме для стриминга.</div>
-        <a class="btn-happ" href="clash://install-config?url=https://githubusercontent.com">Импортировать в Happ</a>
+        <!-- ФИНЛЯНДИЯ -->
+        <div class="card">
+            <div class="card-title">🇫🇮 Финляндия</div>
+            <div class="card-desc">Высокоскоростной европейский сервер с минимальной задержкой. Идеально подходит для игр, стриминга и повседневного серфинга.</div>
+            
+            <div class="qr-container">
+                <img src="https://qrserver.com" alt="QR Финляндия" />
+            </div>
+            
+            <a class="btn-happ" href="clash://install-config?url=https://githubusercontent.com">Импортировать в Happ</a>
+        </div>
+
+        <!-- РОССИЯ -->
+        <div class="card">
+            <div class="card-title">🇷🇺 Россия</div>
+            <div class="card-desc">Оптимизированный локальный прокси для обхода ограничений. Встроены умные правила маршрутизации — Госуслуги и банки работают напрямую (bypass).</div>
+            
+            <div class="qr-container">
+                <img src="https://qrserver.com" alt="QR Россия" />
+            </div>
+            
+            <a class="btn-happ" href="clash://install-config?url=https://githubusercontent.com">Импортировать в Happ</a>
+        </div>
+
+        <!-- НИДЕРЛАНДЫ -->
+        <div class="card">
+            <div class="card-title">🇳🇱 Нидерланды</div>
+            <div class="card-desc">Стабильный и конфиденциальный премиум-сервер в дата-центре Амстердама. Подходит для тяжелого контента и скачивания файлов без ограничений.</div>
+            
+            <div class="qr-container">
+                <img src="https://qrserver.com" alt="QR Нидерланды" />
+            </div>
+            
+            <a class="btn-happ" href="clash://install-config?url=https://githubusercontent.com">Импортировать в Happ</a>
+        </div>
+
     </div>
 
     <footer>
-        Разработчик: <a href="https://t.me" target="_blank">@zxc_infarkt</a>
+        Разработчик: <a href="https://t.me" target="_blank">@zxc_infarkt</a> | GitHub: <a href="https://github.com" target="_blank">@kwazers</a>
     </footer>
 </div>
+
+<!-- ЛОГИКА СНЯТИЯ РАЗМЫТИЯ -->
+<script>
+    function selectPlatform() {
+        // Плавно прячем уведомление-оверлей
+        document.getElementById('platformOverlay').classList.add('hidden');
+        // Убираем размытие со списка подписок
+        document.getElementById('mainContainer').classList.add('active');
+    }
+</script>
 
 </body>
 </html>
