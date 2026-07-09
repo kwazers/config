@@ -8,9 +8,7 @@
 ### 🇫🇮 Финляндия
 * **Горячие кнопки:**
 <a href="clash://install-config?url=https://githubusercontent.com" style="text-decoration: none;">
-  <button style="background-color: #1EBA60; color: white; border: none; padding: 10px 20px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; transition: background 0.2s;">
-    Happ
-  </button>
+  <button style="background-color: #1EBA60; color: white; border: none; padding: 10px 20px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; transition: background 0.2s;">Happ</button>
 </a>
 
 
