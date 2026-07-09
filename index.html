@@ -152,7 +152,7 @@
 <body>
 
 <div class="container">
-    <h1>🌐 VLESS Подписки</h1>
+    <h1>🌐 Подписки</h1>
     <div class="subtitle">Отсканируйте QR или скопируйте ссылку для вставки в VPN Client</div>
 
     <!-- Список подписок -->
@@ -165,11 +165,11 @@
                 <span class="config-count" id="count-finland">Загрузка...</span>
             </div>
             <div class="card-desc">no information available</div>
-            
+
             <div class="qr-container">
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt" alt="QR Финляндия" />
             </div>
-            
+
             <button class="btn-copy" onclick="copyLink('https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt')">Скопировать ссылку</button>
         </div>
 
@@ -180,11 +180,11 @@
                 <span class="config-count" id="count-russia">Загрузка...</span>
             </div>
             <div class="card-desc">no information available</div>
-            
+
             <div class="qr-container">
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/russian-config.txt" alt="QR Россия" />
             </div>
-            
+
             <button class="btn-copy" onclick="copyLink('https://github.com/kwazers/config/blob/main/russian-config.txt')">Скопировать ссылку</button>
         </div>
 
@@ -195,18 +195,34 @@
                 <span class="config-count" id="count-netherlands">Загрузка...</span>
             </div>
             <div class="card-desc">no information available</div>
-            
+
             <div class="qr-container">
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/netherlands-config.txt" alt="QR Нидерланды" />
             </div>
-            
+
             <button class="btn-copy" onclick="copyLink('https://github.com/kwazers/config/blob/main/netherlands-config.txt')">Скопировать ссылку</button>
+        </div>
+
+        <!-- Германия -->
+        <div class="card">
+            <div class="card-title">
+                <span>🇩🇪 Германия</span>
+                <span class="config-count" id="count-germany">Загрузка...</span>
+            </div>
+            <div class="card-desc">no information available</div>
+
+            <div class="qr-container">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/germany-config.txt" alt="QR Нидерланды" />
+            </div>
+
+            <button class="btn-copy" onclick="copyLink('https://github.com/kwazers/config/blob/main/germany-config.txt')">Скопировать ссылку</button>
         </div>
 
     </div>
 
     <footer>
-        Разработчик: <a href="https://t.me/zxc_infarkt" target="_blank">@zxc_infarkt</a>
+        Разработчик: @kwazers |
+        Telegram channel: <a href="https://t.me/zxc_infarkt" target="_blank">@zxc_infarkt</a> 
     </footer>
 </div>
 
@@ -219,7 +235,8 @@
     const configUrls = {
         finland: "https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt",
         russia: "https://raw.githubusercontent.com/kwazers/config/refs/heads/main/russian-config.txt",
-        netherlands: "https://raw.githubusercontent.com/kwazers/config/refs/heads/main/netherlands-config.txt"
+        netherlands: "https://raw.githubusercontent.com/kwazers/config/refs/heads/main/netherlands-config.txt",
+        germany: "https://raw.githubusercontent.com/kwazers/config/refs/heads/main/germany-config.txt"
     };
 
 
