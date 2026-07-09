@@ -1,4 +1,4 @@
-# 🌐 GitHub VLESS Proxy Subscriptions
+# 🌐 GitHub Proxy Subscriptions
 Коллекция постоянно обновляемых и оптимизированных конфигураций для безопасного доступа в интернет.
 
 
