@@ -1,6 +1,6 @@
 #profile-title:base64:a3dhemVycyBnaXRodWIg8J+Ht/Cfh7o=
 #announce:free vless links
-profile-web-page-url:https://github.com/kwazers/config
+profile-web-page-url:https://kwazers.github.io/config/
 support-url:https://t.me/zxc_infarkt
 vless://b406bc51-9002-474c-beae-b194b02c91da@78.159.240.196:8090?path=%2F&security=reality&encryption=none&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&fp=qq&type=xhttp&sni=iv.kommersant.ru&sid=a20d3ed244c76426#🇷🇺Санкт-Петербург
 vless://b406bc51-9002-474c-beae-b194b02c91da@84.38.181.104:8090?mode=gun&security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&fp=qq&type=grpc&serviceName=grpc&sni=eh.vk.com&sid=6b2f4e6ac9b1d2f0#🇷🇺Санкт-Петербург
