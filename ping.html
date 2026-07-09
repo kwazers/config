@@ -39,17 +39,25 @@
 
     <div id="servers" class="servers"></div>
 
+    <div style="margin-top:12px; display:flex; gap:8px">
+        <button id="collectBtn">Собрать</button>
+        <span class="small">Результат будет сохранён в файл (скачивается клиенту). Имя папки определяется локально по IP (в имени файла).</span>
+    </div>
+
     <div style="margin-top:14px;" class="small">Примечание: успешный результат зависит от возможностей указанного proxy и CORS. Если proxy не поддерживает подстановку полных URL, используйте прокси с шаблоном <code>{url}</code> или тот, который принимает полный URL в конце пути.</div>
     <div style="margin-top:12px"><a href="index.html">← Вернуться</a></div>
 </div>
 
 <script>
-    // Начальный список серверов (можно редактировать)
-    const initialServers = [
+    // Начальный список конфиг-файлов, содержащих ссылки (они будут загружены и распарсены)
+    const initialConfigFiles = [
         'https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt',
         'https://raw.githubusercontent.com/kwazers/config/refs/heads/main/russian-config.txt',
         'https://raw.githubusercontent.com/kwazers/config/refs/heads/main/netherlands-config.txt'
     ];
+
+    // Сюда попадут все ссылки, собранные из конфиг-файлов
+    let servers = [];
 
     const serversEl = document.getElementById('servers');
     const proxyInput = document.getElementById('proxyInput');
@@ -58,15 +66,14 @@
     const newServerInput = document.getElementById('newServer');
     const backBtn = document.getElementById('backBtn');
 
-    let servers = [...initialServers];
-
     function renderServers() {
         serversEl.innerHTML = '';
-        servers.forEach((url, idx) => {
+        servers.forEach((item, idx) => {
             const div = document.createElement('div');
             div.className = 'server';
             const left = document.createElement('div');
-            left.innerHTML = `<div style="max-width:78%"><strong>${url}</strong><div class=\"small\">#${idx+1}</div></div>`;
+            const short = item.length > 80 ? item.slice(0,80) + '...' : item;
+            left.innerHTML = `<div style="max-width:78%"><strong>${short}</strong><div class=\"small\">#${idx+1}</div></div>`;
             const right = document.createElement('div');
             right.innerHTML = '<span class="small">-</span>';
             right.style.minWidth = '140px';
@@ -75,7 +82,7 @@
             serversEl.appendChild(div);
             // attach result element for updates
             div.resultEl = right;
-            div.url = url;
+            div.url = item;
             div.idx = idx;
         });
     }
@@ -86,6 +93,12 @@
         servers.push(v);
         newServerInput.value = '';
         renderServers();
+    });
+
+    // Кнопка собрать - формирует и скачивает текстовый файл с результатами
+    const collectBtn = document.getElementById('collectBtn');
+    collectBtn?.addEventListener('click', async () => {
+        await collectAndDownload();
     });
 
     backBtn.addEventListener('click', () => { location.href = 'index.html'; });
@@ -126,7 +139,7 @@
         children.forEach(ch => ch.resultEl.innerHTML = '<span class="small">пинг...</span>');
 
         // Параллельно выполняем запросы
-        const promises = children.map(ch => pingOne(ch.url, proxy).then(res => ({ el: ch, res })));
+        const promises = children.map((ch, i) => pingOne('https://www.gstatic.com/generate_204' + '?_=' + i + '&target=' + encodeURIComponent(ch.url), proxy).then(res => ({ el: ch, res })));
         for (const p of promises) {
             // nothing — we will await all
         }
@@ -145,7 +158,72 @@
     });
 
     // initial render
-    renderServers();
+    // При загрузке: сперва загружаем конфиг-файлы и собираем ссылки, затем отображаем и пингуем
+    async function loadConfigsAndStart() {
+        servers = [];
+        for (const cfgUrl of initialConfigFiles) {
+            try {
+                const noCache = cfgUrl + '?ts=' + Date.now();
+                const r = await fetch(noCache);
+                if (!r.ok) continue;
+                const text = await r.text();
+                const lines = text.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'));
+                // Добавляем все ссылки из файла
+                servers.push(...lines);
+            } catch (e) {
+                // пропускаем
+            }
+        }
+        // Ограничение на количество для производительности
+        if (servers.length > 1000) servers = servers.slice(0, 1000);
+        renderServers();
+        // Автозапуск пинга
+        startPingAll();
+    }
+
+    loadConfigsAndStart();
+
+    // Собираем результаты и скачиваем файл. Определяем локацию по IP для имени
+    async function collectAndDownload() {
+        // Получаем текущие результаты из DOM
+        const rows = Array.from(serversEl.children).map(ch => {
+            const url = ch.url;
+            const resText = ch.resultEl.textContent || '';
+            return { url, resText };
+        });
+
+        // Получаем гео-информацию по IP (используем ipapi.co)
+        let loc = 'unknown';
+        try {
+            const r = await fetch('https://ipapi.co/json/');
+            if (r.ok) {
+                const j = await r.json();
+                loc = (j.city ? j.city + '_' : '') + (j.country || j.country_name || '');
+                loc = loc.replace(/\s+/g, '_');
+            }
+        } catch (e) { /* ignore */ }
+
+        const now = new Date();
+        const pad = n => String(n).padStart(2,'0');
+        const ts = `${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
+        const filename = `${loc || 'unknown'}_${ts}.txt`;
+
+        const lines = [];
+        for (const r of rows) {
+            const timeIso = new Date().toISOString();
+            lines.push(`${timeIso}\t${r.url}\t${r.resText}`);
+        }
+
+        const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+    }
 </script>
 </body>
 </html>
