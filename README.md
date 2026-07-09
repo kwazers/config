@@ -7,10 +7,10 @@
 Для подключения скопируйте **прямую ссылку (Raw)** под нужной страной или отсканируйте **QR-код** через мобильный VPN-клиент.
 ### 🇫🇮 Финляндия
 * **Ссылка для клиента:**
-[клик*](https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt)
+[клик*](https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt#?providerid={EjOuXhsg})
 * **QR-код:**
   
-![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt)
+![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt#?providerid={EjOuXhsg})
 
 ---
 
