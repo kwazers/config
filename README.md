@@ -6,7 +6,9 @@
 ## 📍 Доступные локации и подписки
 Для подключения скопируйте **прямую ссылку (Raw)** под нужной страной или отсканируйте **QR-код** через мобильный VPN-клиент.
 ### 🇫🇮 Финляндия
+
 [Добавить в Happ](happ://subscription?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt)
+
 * **Ссылка для клиента:**
 [клик*](https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt)
 * **QR-код:**
@@ -16,6 +18,7 @@
 ---
 
 ### 🇷🇺 Россия
+
 [Добавить в Happ](happ://subscription?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/russian-config.txt)
 * **Ссылка для клиента:**
 [клик*](https://github.com/kwazers/config/blob/main/russian-config.txt)
