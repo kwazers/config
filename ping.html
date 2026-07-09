@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping via Proxy</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color:#0d1117; color:#c9d1d9; display:flex; justify-content:center; align-items:flex-start; min-height:100vh; margin:0; padding:20px; box-sizing:border-box }
+        .container { background:#161b22; border:1px solid #30363d; border-radius:12px; padding:20px; width:720px; max-width:100%; box-shadow:0 8px 24px rgba(0,0,0,0.5)}
+        h1 { color:#f0f6fc; font-size:20px; margin:0 0 10px 0 }
+        .row { display:flex; gap:8px; margin-bottom:12px }
+        input[type=text] { flex:1; padding:8px 10px; border-radius:6px; border:1px solid #30363d; background:#0b1115; color:#c9d1d9 }
+        button { background:#1EBA60; color:white; border:none; padding:8px 12px; border-radius:6px; cursor:pointer }
+        button.secondary { background:#58a6ff }
+        .servers { margin-top:10px }
+        .server { padding:8px 10px; border-radius:6px; background:#0b1115; border:1px solid #30363d; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center }
+        .small { font-size:13px; color:#8b949e }
+        a { color:#58a6ff }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Пинг серверов через proxy (от лица пользователя страницы)</h1>
+    <div class="small">В поле ниже укажите URL proxy, который умеет проксировать произвольные URL и поддерживает CORS.
+        Примеры: <code>https://your-proxy.example.com/</code> или <code>https://cors-anywhere.herokuapp.com/</code> (требует активации).
+        Если proxy содержит токен подстановки {url}, он будет заменён на адрес цели (например: <code>https://proxy/?u={url}</code>).</div>
+
+    <div class="row" style="margin-top:12px">
+        <input id="proxyInput" type="text" placeholder="URL proxy (оставьте пустым для прямого запроса)" />
+        <button id="startBtn">Пинг</button>
+        <button class="secondary" id="backBtn">Назад</button>
+    </div>
+
+    <div class="small">Список целей (можно добавить свои через кнопку «Добавить»)</div>
+    <div class="row" style="margin-top:8px">
+        <input id="newServer" type="text" placeholder="https://example.com/" />
+        <button id="addBtn">Добавить</button>
+    </div>
+
+    <div id="servers" class="servers"></div>
+
+    <div style="margin-top:14px;" class="small">Примечание: успешный результат зависит от возможностей указанного proxy и CORS. Если proxy не поддерживает подстановку полных URL, используйте прокси с шаблоном <code>{url}</code> или тот, который принимает полный URL в конце пути.</div>
+    <div style="margin-top:12px"><a href="index.html">← Вернуться</a></div>
+</div>
+
+<script>
+    // Начальный список серверов (можно редактировать)
+    const initialServers = [
+        'https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt',
+        'https://raw.githubusercontent.com/kwazers/config/refs/heads/main/russian-config.txt',
+        'https://raw.githubusercontent.com/kwazers/config/refs/heads/main/netherlands-config.txt'
+    ];
+
+    const serversEl = document.getElementById('servers');
+    const proxyInput = document.getElementById('proxyInput');
+    const startBtn = document.getElementById('startBtn');
+    const addBtn = document.getElementById('addBtn');
+    const newServerInput = document.getElementById('newServer');
+    const backBtn = document.getElementById('backBtn');
+
+    let servers = [...initialServers];
+
+    function renderServers() {
+        serversEl.innerHTML = '';
+        servers.forEach((url, idx) => {
+            const div = document.createElement('div');
+            div.className = 'server';
+            const left = document.createElement('div');
+            left.innerHTML = `<div style="max-width:78%"><strong>${url}</strong><div class=\"small\">#${idx+1}</div></div>`;
+            const right = document.createElement('div');
+            right.innerHTML = '<span class="small">-</span>';
+            right.style.minWidth = '140px';
+            div.appendChild(left);
+            div.appendChild(right);
+            serversEl.appendChild(div);
+            // attach result element for updates
+            div.resultEl = right;
+            div.url = url;
+            div.idx = idx;
+        });
+    }
+
+    addBtn.addEventListener('click', () => {
+        const v = newServerInput.value.trim();
+        if (!v) return;
+        servers.push(v);
+        newServerInput.value = '';
+        renderServers();
+    });
+
+    backBtn.addEventListener('click', () => { location.href = 'index.html'; });
+
+    // Функция для построения проксированного URL
+    function buildProxyUrl(proxy, targetUrl) {
+        if (!proxy) return targetUrl;
+        if (proxy.includes('{url}')) {
+            return proxy.replace('{url}', encodeURIComponent(targetUrl));
+        }
+        // Если proxy заканчивается символом /, просто добавляем target
+        return proxy.endsWith('/') ? (proxy + targetUrl) : (proxy + '/' + targetUrl);
+    }
+
+    async function pingOne(targetUrl, proxy, timeoutMs = 8000) {
+        const fetchUrl = buildProxyUrl(proxy, targetUrl);
+        const controller = new AbortController();
+        const signal = controller.signal;
+        const start = performance.now();
+        const timeout = setTimeout(() => controller.abort(), timeoutMs);
+        try {
+            // Попытка fetch. Режим CORS зависит от прокси — если прокси не даёт CORS, запрос упадёт.
+            await fetch(fetchUrl, { method: 'GET', mode: 'cors', cache: 'no-store', signal: signal });
+            const duration = Math.round(performance.now() - start);
+            clearTimeout(timeout);
+            return { ok: true, time: duration };
+        } catch (err) {
+            clearTimeout(timeout);
+            if (err.name === 'AbortError') return { ok: false, error: 'timeout' };
+            return { ok: false, error: err.message || 'error' };
+        }
+    }
+
+    async function startPingAll() {
+        const proxy = proxyInput.value.trim();
+        const children = Array.from(serversEl.children);
+        // Обновляем статус
+        children.forEach(ch => ch.resultEl.innerHTML = '<span class="small">пинг...</span>');
+
+        // Параллельно выполняем запросы
+        const promises = children.map(ch => pingOne(ch.url, proxy).then(res => ({ el: ch, res })));
+        for (const p of promises) {
+            // nothing — we will await all
+        }
+        const results = await Promise.all(promises);
+        results.forEach(({ el, res }) => {
+            if (res.ok) {
+                el.resultEl.innerHTML = `<span style="color:#1EBA60"><strong>${res.time} ms</strong></span>`;
+            } else {
+                el.resultEl.innerHTML = `<span style="color:#ff6b6b">Ошибка: ${res.error}</span>`;
+            }
+        });
+    }
+
+    startBtn.addEventListener('click', () => {
+        startPingAll();
+    });
+
+    // initial render
+    renderServers();
+</script>
+</body>
+</html>
