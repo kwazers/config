@@ -1,5 +1,5 @@
 #profile-title:🇷🇺 github @kwazers
-#announce:free vless links
+#announce:free links
 #profile-web-page-url:https://kwazers.github.io/config/
 #support-url:https://t.me/zxc_infarkt
 vless://b406bc51-9002-474c-beae-b194b02c91da@176.12.71.179:443?security=reality&encryption=none&pbk=5JkeRhrvxxdW7Y-jJNnvMUZ6W37yWegXl4-Ea-zl9BU&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=sun6-21.userapi.com&sid=89bee0f1e450d3cf#🇷🇺Москва
