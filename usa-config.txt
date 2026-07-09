@@ -1,0 +1,10 @@
+#profile-title:🇺🇸 github @kwazers
+#announce:free links
+#profile-web-page-url:https://kwazers.github.io/config/
+#support-url:https://t.me/zxc_infarkt
+vless://b406bc51-9002-474c-beae-b194b02c91da@84.201.163.193:7443?security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=io.ozone.ru&sid=a20d3ed244c76426#🇺🇸Орем
+vless://b406bc51-9002-474c-beae-b194b02c91da@84.201.175.72:443?security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=ads.x5.ru&sid=a20d3ed244c76426#🇺🇸Орем
+vless://b406bc51-9002-474c-beae-b194b02c91da@78.159.250.173:443?security=reality&encryption=none&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=media.mediavitrina.ru&sid=a20d3ed244c76426#🇺🇸Орем
+vless://b406bc51-9002-474c-beae-b194b02c91da@51.250.86.198:8090?path=%2F&security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&fp=qq&type=xhttp&sni=ads.x5.ru&sid=6b2f4e6ac9b1d2f0#🇺🇸Орем
+vless://b406bc51-9002-474c-beae-b194b02c91da@84.201.163.193:443?security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=eh.vk.com&sid=a20d3ed244c76426#🇺🇸Орем
+vless://b406bc51-9002-474c-beae-b194b02c91da@144.31.107.73:5443?security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=usa.speedload.online&sid=a20d3ed244c76426#🇺🇸Ашберн
