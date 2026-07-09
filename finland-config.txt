@@ -1,7 +1,8 @@
 #profile-title:base64:a3dhemVycyBnaXRodWIg8J+Hq/Cfh64=
-profile-web-page-url:https://github.com/kwazers/config
-hide-settings: 1
-support-url:https://t.me/zxc_infarkt
+#profile-web-page-url:https://github.com/kwazers/config
+#hide-settings: 1
+#support-url:https://t.me/zxc_infarkt
+#subscriptions-expand-now: 1
 vless://b406bc51-9002-474c-beae-b194b02c91da@84.201.132.192:8090?path=%2F&security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&fp=qq&type=xhttp&sni=sun6-22.userapi.com&sid=6b2f4e6ac9b1d2f0#🇫🇮Хельсинки
 vless://b406bc51-9002-474c-beae-b194b02c91da@51.250.97.219:8443?mode=gun&security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&fp=qq&type=grpc&serviceName=grpc&sni=urentbike.ru&sid=6b2f4e6ac9b1d2f0#🇫🇮Хельсинки
 vless://b406bc51-9002-474c-beae-b194b02c91da@84.201.132.192:443?security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=ads.x5.ru&sid=a20d3ed244c76426#🇫🇮Хельсинки
