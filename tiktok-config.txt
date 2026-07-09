@@ -1,1 +1,5 @@
-
+#profile-title:tiktok github @kwazers
+#announce:free links
+#profile-web-page-url:https://kwazers.github.io/config/
+#support-url:https://t.me/zxc_infarkt
+vless://b406bc51-9002-474c-beae-b194b02c91da@84.201.163.193:8090?path=%2F&security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&fp=qq&type=xhttp&sni=ads.x5.ru&sid=6b2f4e6ac9b1d2f0#🇷🇺Санкт-Петербург
