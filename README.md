@@ -5,3 +5,7 @@
 [Россия VLESS ссылки](https://github.com/kwazers/config/blob/main/russian-config.txt)
 
 ![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/russian-config.txt)
+
+[Нидерланды VLESS ссылки](https://github.com/kwazers/config/blob/main/netherlands-config.txt)
+
+![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/netherlands-config.txt)
