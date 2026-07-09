@@ -1,5 +1,5 @@
 #profile-title:base64:a3dhemVycyBnaXRodWIg8J+Hq/Cfh64=
-#profile-web-page-url:https://github.com/kwazers/config
+#profile-web-page-url:https://kwazers.github.io/config/
 #hide-settings: 1
 #support-url:https://t.me/zxc_infarkt
 #subscriptions-expand-now: 1
