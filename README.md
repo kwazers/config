@@ -8,7 +8,8 @@
 ### 🇫🇮 Финляндия
 * **Горячие кнопки:**
 <a href="clash://install-config?url=https://githubusercontent.com">
-  <img src="[https://proicons.com/icon/326893.svg" alt="Импорт в Happ" />
+  <img alt="Static Badge" src="https://img.shields.io/badge/open-happ?style=plastic&logoColor=grey&label=Happ&labelColor=black&color=green">
+
 </a>
 
 [Добавить в Happ](v2rayng://install-config?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt)
