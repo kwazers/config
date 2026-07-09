@@ -57,7 +57,16 @@
             margin-bottom: 6px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: space-between;
+        }
+        .config-count {
+            font-size: 11px;
+            background-color: #30363d;
+            color: #8b949e;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: normal;
+            border: 1px solid #444c56;
         }
         .card-desc {
             color: #8b949e;
@@ -151,7 +160,10 @@
 
         <!-- ФИНЛЯНДИЯ -->
         <div class="card">
-            <div class="card-title">Финляндия</div>
+            <div class="card-title">
+                <span>🇫🇮 Финляндия</span>
+                <span class="config-count" id="count-finland">Загрузка...</span>
+            </div>
             <div class="card-desc">no information available</div>
             
             <div class="qr-container">
@@ -163,7 +175,10 @@
 
         <!-- РОССИЯ -->
         <div class="card">
-            <div class="card-title">Россия</div>
+            <div class="card-title">
+                <span>🇷🇺 Россия</span>
+                <span class="config-count" id="count-russia">Загрузка...</span>
+            </div>
             <div class="card-desc">no information available</div>
             
             <div class="qr-container">
@@ -175,14 +190,17 @@
 
         <!-- НИДЕРЛАНДЫ -->
         <div class="card">
-            <div class="card-title">Нидерланды</div>
+            <div class="card-title">
+                <span>🇳🇱 Нидерланды</span>
+                <span class="config-count" id="count-netherlands">Загрузка...</span>
+            </div>
             <div class="card-desc">no information available</div>
             
             <div class="qr-container">
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/netherlands-config.txt" alt="QR Нидерланды" />
             </div>
             
-            <button class="btn-copy" onclick="copyLink('hhttps://github.com/kwazers/config/blob/main/netherlands-config.txt')">Скопировать ссылку</button>
+            <button class="btn-copy" onclick="copyLink('https://github.com/kwazers/config/blob/main/netherlands-config.txt')">Скопировать ссылку</button>
         </div>
 
     </div>
@@ -195,10 +213,44 @@
 <!-- Элемент уведомления -->
 <div id="toast" class="toast">Ссылка скопирована!</div>
 
-<!-- СКРИПТ КОПИРОВАНИЯ -->
+<!-- СКРИПТ СЧЕТЧИКА СТРОК И КОПИРОВАНИЯ -->
 <script>
+    // Пути к вашим файлам на GitHub
+    const configUrls = {
+        finland: "https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt",
+        russia: "https://github.com/kwazers/config/blob/main/russian-config.txt",
+        netherlands: "https://github.com/kwazers/config/blob/main/netherlands-config.txt"
+    };
+
+    async function countConfigs(url, elementId) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error();
+            const text = await response.text();
+            
+            // Разбиваем текст файла на массив строк
+            const lines = text.split('\n');
+            
+            // Считаем вообще любые строки, которые не пустые и не начинаются с #
+            const count = lines.filter(line => {
+                const trimmed = line.trim();
+                return trimmed.length > 0 && !trimmed.startsWith('#');
+            }).length;
+
+            document.getElementById(elementId).innerText = `Конфигов: ${count}`;
+        } catch (error) {
+            document.getElementById(elementId).innerText = "Ошибка";
+        }
+    }
+
+    // Запускаем автоподсчет при открытии сайта
+    window.onload = function() {
+        countConfigs(configUrls.finland, 'count-finland');
+        countConfigs(configUrls.russia, 'count-russia');
+        countConfigs(configUrls.netherlands, 'count-netherlands');
+    };
+
     function copyLink(url) {
-        // Создаем временное поле для копирования
         const el = document.createElement('textarea');
         el.value = url;
         document.body.appendChild(el);
@@ -206,11 +258,9 @@
         document.execCommand('copy');
         document.body.removeChild(el);
 
-        // Показываем уведомление
         const toast = document.getElementById('toast');
         toast.classList.add('show');
         
-        // Прячем через 2 секунды
         setTimeout(() => {
             toast.classList.remove('show');
         }, 2000);
