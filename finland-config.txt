@@ -1,4 +1,4 @@
-#profile-title:🇷🇺 github @kwazers
+#profile-title:🇫🇮 github @kwazers
 #announce:free vless links
 #profile-web-page-url:https://kwazers.github.io/config/
 #support-url:https://t.me/zxc_infarkt
