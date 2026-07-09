@@ -8,7 +8,7 @@
 ### 🇫🇮 Финляндия
 * **Горячие кнопки:**
 <a href="happ://subscription?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/russian-config.txt">
-  <img alt="Static Badge" src="https://img.shields.io/badge/open-happ?style=plastic&logoColor=grey&label=Happ&labelColor=black&color=green">
+<button>Happ<button/>
 
 </a>
 
