@@ -16,10 +16,7 @@
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
-            overflow-x: hidden;
         }
-
-        /* Задний фон по умолчанию размыт */
         .container {
             background-color: #161b22;
             border: 1px solid #30363d;
@@ -29,17 +26,7 @@
             width: 100%;
             text-align: center;
             box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-            filter: blur(8px); /* Изначальное размытие контента */
-            pointer-events: none; /* Запрет кликов, пока не выбрана платформа */
-            transition: filter 0.4s ease;
         }
-
-        /* Класс, который убирает размытие после выбора */
-        .container.active {
-            filter: blur(0);
-            pointer-events: auto;
-        }
-
         h1 {
             color: #f0f6fc;
             font-size: 24px;
@@ -51,34 +38,7 @@
             margin-bottom: 25px;
         }
         
-        /* Панель выбранной платформы сверху */
-        .platform-picker {
-            background-color: #21262d;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            padding: 12px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .platform-label {
-            font-size: 14px;
-            font-weight: bold;
-            color: #f0f6fc;
-        }
-        .platform-badge {
-            background-color: #1e293b;
-            border: 1px solid #1EBA60;
-            color: #1EBA60;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        /* Карточки подписок */
+        /* Список подписок */
         .subscription-list {
             text-align: left;
         }
@@ -88,6 +48,7 @@
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 25px;
+            position: relative;
         }
         .card-title {
             font-size: 18px;
@@ -120,88 +81,47 @@
             height: 160px;
             display: block;
         }
-        .btn-happ {
+        .btn-copy {
             display: block;
             background-color: #1EBA60;
             color: white;
-            text-decoration: none;
+            border: none;
+            width: 100%;
             text-align: center;
             font-weight: bold;
             padding: 12px;
             border-radius: 6px;
             font-size: 15px;
+            cursor: pointer;
             box-shadow: 0 4px 12px rgba(30, 186, 96, 0.2);
             transition: background-color 0.2s, transform 0.1s;
         }
-        .btn-happ:hover {
+        .btn-copy:hover {
             background-color: #169a4e;
         }
-        .btn-happ:active {
+        .btn-copy:active {
             transform: scale(0.98);
         }
-
-        /* Стили приветственного оверлея / уведомления */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(13, 17, 23, 0.7);
-            backdrop-filter: blur(4px); /* Дополнительное размытие всего экрана */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
-        }
         
-        .overlay.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .modal {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 30px;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-        }
-
-        .modal-title {
-            color: #f0f6fc;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-
-        .modal-text {
-            color: #8b949e;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 25px;
-        }
-
-        .btn-select {
-            background-color: #1EBA60;
+        /* Всплывающее уведомление */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: #238636;
             color: white;
-            border: none;
             padding: 12px 24px;
-            font-size: 15px;
-            font-weight: bold;
             border-radius: 6px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.2s;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            z-index: 9999;
         }
-
-        .btn-select:hover {
-            background-color: #169a4e;
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
         }
 
         footer {
@@ -222,25 +142,11 @@
 </head>
 <body>
 
-<!-- УВЕДОМЛЕНИЕ С ВЫБОРОМ ПЛАТФОРМЫ -->
-<div class="overlay" id="platformOverlay">
-    <div class="modal">
-        <div class="modal-title">📱 Выберите платформу</div>
-        <div class="modal-text">Для генерации корректных ссылок быстрого импорта и работы QR-кодов, пожалуйста, подтвердите использование клиента Happ.</div>
-        <button class="btn-select" onclick="selectPlatform()">Использовать Happ Client</button>
-    </div>
-</div>
+<div class="container">
+    <h1>🌐 VLESS Подписки</h1>
+    <div class="subtitle">Отсканируйте QR или скопируйте ссылку для вставки в VPN Client</div>
 
-<!-- ОСНОВНОЙ КОНТЕНТ (ИЗНАЧАЛЬНО РАЗМЫТ) -->
-<div class="container" id="mainContainer">
-    <h1>🌐 VLESS Конфигурации</h1>
-    <div class="subtitle">Быстрое подключение и управление прокси-нодами</div>
-
-    <div class="platform-picker">
-        <span class="platform-label">Текущая платформа:</span>
-        <span class="platform-badge">Happ Client</span>
-    </div>
-
+    <!-- Список подписок -->
     <div class="subscription-list">
 
         <!-- ФИНЛЯНДИЯ -->
@@ -252,7 +158,7 @@
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt" alt="QR Финляндия" />
             </div>
             
-            <a class="btn-happ" href="happ://subscription?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt">Импортировать в Happ</a>
+            <button class="btn-copy" onclick="copyLink('https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt')">Скопировать ссылку</button>
         </div>
 
         <!-- РОССИЯ -->
@@ -264,7 +170,7 @@
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/russian-config.txt" alt="QR Россия" />
             </div>
             
-            <a class="btn-happ" href="happ://subscription?url=https://github.com/kwazers/config/blob/main/russian-config.txt">Импортировать в Happ</a>
+            <button class="btn-copy" onclick="copyLink('https://github.com/kwazers/config/blob/main/russian-config.txt')">Скопировать ссылку</button>
         </div>
 
         <!-- НИДЕРЛАНДЫ -->
@@ -276,23 +182,38 @@
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/netherlands-config.txt" alt="QR Нидерланды" />
             </div>
             
-            <a class="btn-happ" href="happ://subscription?url=https://github.com/kwazers/config/blob/main/netherlands-config.txt">Импортировать в Happ</a>
+            <button class="btn-copy" onclick="copyLink('hhttps://github.com/kwazers/config/blob/main/netherlands-config.txt')">Скопировать ссылку</button>
         </div>
 
     </div>
 
     <footer>
-        Разработчик: <a href="https://t.me/zxc_infarkt" target="_blank">@zxc_infarkt</a> | GitHub: <a href="https://github.com/kwazers" target="_blank">@kwazers</a>
+        Разработчик: <a href="https://t.me/zxc_infarkt" target="_blank">@zxc_infarkt</a>
     </footer>
 </div>
 
-<!-- ЛОГИКА СНЯТИЯ РАЗМЫТИЯ -->
+<!-- Элемент уведомления -->
+<div id="toast" class="toast">Ссылка скопирована!</div>
+
+<!-- СКРИПТ КОПИРОВАНИЯ -->
 <script>
-    function selectPlatform() {
-        // Плавно прячем уведомление-оверлей
-        document.getElementById('platformOverlay').classList.add('hidden');
-        // Убираем размытие со списка подписок
-        document.getElementById('mainContainer').classList.add('active');
+    function copyLink(url) {
+        // Создаем временное поле для копирования
+        const el = document.createElement('textarea');
+        el.value = url;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+
+        // Показываем уведомление
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        
+        // Прячем через 2 секунды
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2000);
     }
 </script>
 
