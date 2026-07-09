@@ -7,6 +7,7 @@
 Для подключения скопируйте **прямую ссылку (Raw)** под нужной страной или отсканируйте **QR-код** через мобильный VPN-клиент.
 ### 🇫🇮 Финляндия
 * **Горячие кнопки:**
+<a href="clash://install-config?url=https://githubusercontent.com"><img src="https://shields.io" alt="Import"></a>
 [Добавить в Happ](v2rayng://install-config?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt)
 happ://subscription?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt
 
