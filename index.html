@@ -222,16 +222,18 @@
         netherlands: "https://github.com/kwazers/config/blob/main/netherlands-config.txt"
     };
 
-    async function countConfigs(url, elementId) {
+ async function countConfigs(url, elementId) {
         try {
-            const response = await fetch(url);
+            // Добавляем к URL уникальный штамп времени, чтобы обойти кэш браузера
+            const cacheBuster = url + '?t=' + new Date().getTime();
+            
+            // Запрашиваем файл с принудительным отключением кэширования
+            const response = await fetch(cacheBuster, { cache: "no-store" });
             if (!response.ok) throw new Error();
             const text = await response.text();
             
-            // Разбиваем текст файла на массив строк
             const lines = text.split('\n');
             
-            // Считаем вообще любые строки, которые не пустые и не начинаются с #
             const count = lines.filter(line => {
                 const trimmed = line.trim();
                 return trimmed.length > 0 && !trimmed.startsWith('#');
@@ -241,29 +243,6 @@
         } catch (error) {
             document.getElementById(elementId).innerText = "Ошибка";
         }
-    }
-
-    // Запускаем автоподсчет при открытии сайта
-    window.onload = function() {
-        countConfigs(configUrls.finland, 'count-finland');
-        countConfigs(configUrls.russia, 'count-russia');
-        countConfigs(configUrls.netherlands, 'count-netherlands');
-    };
-
-    function copyLink(url) {
-        const el = document.createElement('textarea');
-        el.value = url;
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
-
-        const toast = document.getElementById('toast');
-        toast.classList.add('show');
-        
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 2000);
     }
 </script>
 
