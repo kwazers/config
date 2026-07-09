@@ -8,6 +8,7 @@
 ### 🇫🇮 Финляндия
 * **Горячие кнопки:**
 [Добавить в Happ](happ://subscription?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt)
+happ://subscription?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt
 
 * **Ссылка для клиента:**
 [клик*](https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt)
