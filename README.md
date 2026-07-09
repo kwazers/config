@@ -1,39 +1,17 @@
 # 🌐 GitHub VLESS Proxy Subscriptions
-Коллекция постоянно обновляемых и оптимизированных VLESS конфигураций для безопасного доступа в интернет.
+Коллекция постоянно обновляемых и оптимизированных конфигураций для безопасного доступа в интернет.
 
 ---
 
-## Быстрое добавление в приложение
+## Перенесенно в сайт
  [клик*](https://kwazers.github.io/config/)
 
 ---
  
 ## 📍 Доступные локации и подписки
-Для подключения скопируйте **прямую ссылку (Raw)** под нужной страной или отсканируйте **QR-код** через мобильный VPN-клиент.
 ### 🇫🇮 Финляндия
-* **Ссылка для клиента:**
-[клик*](https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt)
-* **QR-код:**
-  
-![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt#?providerid={EjOuXhsg})
-
----
-
 ### 🇷🇺 Россия
-* **Ссылка для клиента:**
-[клик*](https://github.com/kwazers/config/blob/main/russian-config.txt)
-* **QR-код:**
-  
-![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/russian-config.txt)
-
----
-
 ### 🇳🇱 Нидерланды
-* **Ссылка для клиента:**
-[клик*](https://github.com/kwazers/config/blob/main/netherlands-config.txt)
-* **QR-код:**
-  
-![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/netherlands-config.txt)
 
 ## 🛠 Инструкция по установке
 
