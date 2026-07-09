@@ -3,6 +3,7 @@
 #profile-web-page-url:https://kwazers.github.io/config/
 #support-url:https://t.me/zxc_infarkt
 vless://b406bc51-9002-474c-beae-b194b02c91da@176.12.71.179:443?security=reality&encryption=none&pbk=5JkeRhrvxxdW7Y-jJNnvMUZ6W37yWegXl4-Ea-zl9BU&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=sun6-21.userapi.com&sid=89bee0f1e450d3cf#🇷🇺Москва
+vless://70b1ffe8-a709-4f05-93a5-c15fa42a4a96@144.31.107.73:2443?security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=fr.serverstats.ru&sid=a20d3ed244c76426#🇷🇺Москва
 vless://b406bc51-9002-474c-beae-b194b02c91da@37.18.15.239:8090?path=%2F&security=reality&encryption=none&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&fp=qq&type=xhttp&sni=iv.kommersant.ru&sid=a20d3ed244c76426#🇷🇺Москва
 vless://b406bc51-9002-474c-beae-b194b02c91da@109.172.115.71:443?security=reality&encryption=none&pbk=H6Ka1r2xZnRf29vhxygofvtwGD2KelEFcYHKXTEt2wk&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=sun6-21.userapi.com&sid=d87a6ae332fd4d2d#🇷🇺Москва
 vless://b406bc51-9002-474c-beae-b194b02c91da@78.159.240.196:8090?path=%2F&security=reality&encryption=none&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&fp=qq&type=xhttp&sni=iv.kommersant.ru&sid=a20d3ed244c76426#🇷🇺Москва
