@@ -11,14 +11,6 @@
 ## 📍 Доступные локации и подписки
 Для подключения скопируйте **прямую ссылку (Raw)** под нужной страной или отсканируйте **QR-код** через мобильный VPN-клиент.
 ### 🇫🇮 Финляндия
-* **Горячие кнопки:**
- <a href="happ://subscription?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/russian-config.txt">
-  <code> [ Импортировать в Happ ] </code>
-</a>
-
-![Добавить в Happ](happ://subscription?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/russian-config.txt)
-
-
 * **Ссылка для клиента:**
 [клик*](https://raw.githubusercontent.com/kwazers/config/refs/heads/main/finland-config.txt)
 * **QR-код:**
@@ -28,8 +20,6 @@
 ---
 
 ### 🇷🇺 Россия
-
-[Добавить в Happ](happ://subscription?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/russian-config.txt)
 * **Ссылка для клиента:**
 [клик*](https://github.com/kwazers/config/blob/main/russian-config.txt)
 * **QR-код:**
@@ -39,7 +29,6 @@
 ---
 
 ### 🇳🇱 Нидерланды
-[Добавить в Happ](happ://subscription?url=https://raw.githubusercontent.com/kwazers/config/refs/heads/main/netherlands-config.txt)
 * **Ссылка для клиента:**
 [клик*](https://github.com/kwazers/config/blob/main/netherlands-config.txt)
 * **QR-код:**
