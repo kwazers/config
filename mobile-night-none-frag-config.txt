@@ -1,0 +1,18 @@
+#profile-title: mobile night none frag github @kwazers
+#announce:Проверенно на: \n Краснодарский край\n Оператор: t2
+#profile-web-page-url:https://kwazers.github.io/config/
+#support-url:https://t.me/zxc_infarkt
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@79.174.92.178:22?encryption=none&security=reality&type=grpc&sni=ads.x5.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&serviceName=grpc#🇵🇱Варшава
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@79.174.92.232:22?encryption=none&security=reality&type=grpc&sni=ads.x5.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&serviceName=grpc#🇵🇱Варшава
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@79.174.92.203:22?encryption=none&security=reality&type=grpc&sni=ads.x5.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&serviceName=grpc#🇵🇱Варшава
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@178.250.243.237:7443?encryption=none&security=reality&type=grpc&sni=ads.x5.ru&fp=firefox&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&sid=a20d3ed244c76426&serviceName=grpc#🇷🇺Москва
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@37.18.15.239:8090?encryption=none&security=reality&type=xhttp&sni=iv.kommersant.ru&fp=firefox&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&sid=a20d3ed244c76426&path=%2F#🇷🇺Санкт-Петербург
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@37.18.15.239:443?encryption=none&security=reality&type=grpc&sni=media.mediavitrina.ru&fp=firefox&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&sid=a20d3ed244c76426&serviceName=grpc#🇷🇺Санкт-Петербург
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@78.159.245.35:8090?encryption=none&security=reality&type=xhttp&sni=iv.kommersant.ru&fp=firefox&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&sid=a20d3ed244c76426&path=%2F#🇷🇺Москва
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@151.236.114.215:443?encryption=none&security=reality&type=grpc&sni=media.mediavitrina.ru&fp=firefox&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&sid=a20d3ed244c76426&serviceName=grpc#🇷🇺Москва
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@178.250.242.67:7443?encryption=none&security=reality&type=grpc&sni=ads.x5.ru&fp=firefox&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&sid=a20d3ed244c76426&serviceName=grpc#🇷🇺Москва
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@176.109.94.193:8443?encryption=none&security=reality&type=grpc&sni=ads.x5.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&serviceName=grpc#🇷🇺Москва
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@78.159.240.196:443?encryption=none&security=reality&type=grpc&sni=media.mediavitrina.ru&fp=firefox&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&sid=a20d3ed244c76426&serviceName=grpc#🇷🇺Санкт-Петербург
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@151.236.114.215:8090?encryption=none&security=reality&type=xhttp&sni=iv.kommersant.ru&fp=firefox&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&sid=a20d3ed244c76426&path=%2F#🇷🇺Санкт-Петербург
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@78.159.240.196:8090?encryption=none&security=reality&type=xhttp&sni=iv.kommersant.ru&fp=firefox&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&sid=a20d3ed244c76426&path=%2F#🇷🇺Москва
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@glr.rushtaxi.ru:8443?encryption=none&security=reality&type=grpc&sni=eh.vk.com&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&serviceName=grpc#🇷🇺Санкт-Петербург
