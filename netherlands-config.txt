@@ -2,8 +2,10 @@
 #announce:free links
 #profile-web-page-url:https://kwazers.github.io/config/
 #support-url:https://t.me/zxc_infarkt
-vless://b406bc51-9002-474c-beae-b194b02c91da@95.213.143.210:7443?mode=gun&security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&fp=qq&type=grpc&serviceName=grpc&sni=ru.nice-chat.ru&sid=6b2f4e6ac9b1d2f0#🇳🇱Халфвег
-vless://b406bc51-9002-474c-beae-b194b02c91da@95.213.143.210:8090?path=%2F&security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&fp=qq&type=xhttp&sni=ru.nice-chat.ru&sid=6b2f4e6ac9b1d2f0#🇳🇱Халфвег
-vless://b406bc51-9002-474c-beae-b194b02c91da@95.213.143.210:8443?security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=ru.nice-chat.ru&sid=a20d3ed244c76426#🇳🇱Халфвег
-vless://b406bc51-9002-474c-beae-b194b02c91da@95.213.143.210:8443?security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=ru.nice-chat.ru&sid=a20d3ed244c76426#🇳🇱Халфвег
-vless://b406bc51-9002-474c-beae-b194b02c91da@212.34.142.82:8443?security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=nl.rushtaxi.ru&sid=a20d3ed244c76426#🇳🇱Амстердам
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@212.34.142.82:8443?encryption=none&security=reality&type=tcp&flow=xtls-rprx-vision&sni=nl.rushtaxi.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=a20d3ed244c76426#🇳🇱Амстердам
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@68.209.56.102:8443?encryption=none&security=reality&type=tcp&flow=xtls-rprx-vision&sni=eh.vk.com&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=a20d3ed244c76426#🇳🇱Халфвег
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@72.57.78.174:7443?encryption=none&security=tls&type=ws&sni=neth.speedload.ru&fp=firefox&path=%2Fws&host=neth.speedload.ru&alpn=h2%2Chttp%2F1.1#🇳🇱Халфвег
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@95.213.143.210:7443?encryption=none&security=reality&type=grpc&sni=ru.nice-chat.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&serviceName=grpc#🇳🇱Халфвег
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@95.213.143.210:8090?encryption=none&security=reality&type=xhttp&sni=ru.nice-chat.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&path=%2F#🇳🇱Халфвег
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@95.213.143.210:8443?encryption=none&security=reality&type=tcp&flow=xtls-rprx-vision&sni=ru.nice-chat.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=a20d3ed244c76426#🇳🇱Халфвег
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@nl.federal-usa.com:8443?encryption=none&security=tls&type=ws&sni=nl.federal-usa.com&fp=qq&path=%2Fws&host=nl.federal-usa.com&alpn=h3%2Ch2%2Chttp%2F1.1#🇳🇱Халфвег
