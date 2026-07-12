@@ -2,8 +2,12 @@
 #announce:free links
 #profile-web-page-url:https://kwazers.github.io/config/
 #support-url:https://t.me/zxc_infarkt
-vless://b406bc51-9002-474c-beae-b194b02c91da@51.250.46.241:443?security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=ads.x5.ru&sid=a20d3ed244c76426#🇩🇪Франкфурт-на-Майне
-vless://b406bc51-9002-474c-beae-b194b02c91da@51.250.46.241:8443?mode=gun&security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&fp=qq&type=grpc&serviceName=grpc&sni=ads.x5.ru&sid=6b2f4e6ac9b1d2f0#🇩🇪Франкфурт-на-Майне
-vless://b406bc51-9002-474c-beae-b194b02c91da@84.201.175.72:8443?mode=gun&security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&fp=qq&type=grpc&serviceName=grpc&sni=ads.x5.ru&sid=6b2f4e6ac9b1d2f0#🇩🇪Франкфурт-на-Майне
-vless://b406bc51-9002-474c-beae-b194b02c91da@144.31.50.116:8443?security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=ant.federal-usa.com&sid=a20d3ed244c76426#🇩🇪Кельстербах
-vless://b406bc51-9002-474c-beae-b194b02c91da@144.31.50.116:8443?security=reality&encryption=none&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=ant.federal-usa.com&sid=a20d3ed244c76426#🇩🇪Кельстербах
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@109.122.196.60:8443?encryption=none&security=reality&type=tcp&flow=xtls-rprx-vision&sni=detwo.serverstats.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=a20d3ed244c76426#🇩🇪Франкфурт-на-Майне
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@144.31.50.116:8443?encryption=none&security=reality&type=tcp&flow=xtls-rprx-vision&sni=ant.federal-usa.com&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=a20d3ed244c76426#🇩🇪Кельстербах
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@178.17.49.85:8443?encryption=none&security=reality&type=tcp&flow=xtls-rprx-vision&sni=deone.serverstats.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=a20d3ed244c76426#🇩🇪Франкфурт-на-Майне
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@45.145.40.56:7443?encryption=none&security=reality&type=tcp&flow=xtls-rprx-vision&sni=speed.overload.ovh&fp=chrome&pbk=lCwVDvngXM3kLz86XpOJmZ46coOVaV7Kl7vB7cCPeQI&sid=a20d3ed244c76426#🇩🇪Франкфурт-на-Майне
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@51.250.46.241:8090?encryption=none&security=reality&type=xhttp&sni=max.ru&fp=qq&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&path=%2F#🇩🇪Франкфурт-на-Майне
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@51.250.46.241:8443?encryption=none&security=reality&type=grpc&sni=ads.x5.ru&fp=qq&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&serviceName=grpc#🇩🇪Франкфурт-на-Майне
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@84.201.175.72:443?encryption=none&security=reality&type=tcp&flow=xtls-rprx-vision&sni=ads.x5.ru&fp=qq&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=a20d3ed244c76426#🇩🇪Франкфурт-на-Майне
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@84.201.175.72:8090?encryption=none&security=reality&type=xhttp&sni=sun6-21.userapi.com&fp=qq&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&path=%2F#🇩🇪Франкфурт-на-Майне
+vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@84.201.175.72:8443?encryption=none&security=reality&type=grpc&sni=ads.x5.ru&fp=qq&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&serviceName=grpc#🇩🇪Франкфурт-на-Майне
