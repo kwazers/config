@@ -18,7 +18,7 @@
     <div class="subscription-list">
 
         <!-- ФИНЛЯНДИЯ -->
-        <div class="card">
+        <div class="card" id="finland">
             <div class="card-title">
                 <span>🇫🇮 Финляндия</span>
                 <span class="config-count" id="count-finland">Загрузка...</span>
@@ -33,7 +33,7 @@
         </div>
 
         <!-- РОССИЯ -->
-        <div class="card">
+        <div class="card" id="russia">
             <div class="card-title">
                 <span>🇷🇺 Россия</span>
                 <span class="config-count" id="count-russia">Загрузка...</span>
@@ -41,14 +41,14 @@
             <div class="card-desc">Российские ip, с которым можно заходить в российские приложения не выключая и пользоваться иностранными сервисами</div>
 
             <div class="qr-container">
-                <img src=`${qrurl}${configUrls.russia}` alt="QR Россия" />
+                <span id="russia"></span>
             </div>
 
             <button class="btn-copy" onclick="copyLink(`${id}`)">Скопировать ссылку</button>
         </div>
 
         <!-- НИДЕРЛАНДЫ -->
-        <div class="card">
+        <div class="card" id="netherlands">
             <div class="card-title">
                 <span>🇳🇱 Нидерланды</span>
                 <span class="config-count" id="count-netherlands">Загрузка...</span>
@@ -56,14 +56,14 @@
             <div class="card-desc">no information available</div>
 
             <div class="qr-container">
-                <img src=`${qrurl}${configUrls.netherlands}` alt="QR Нидерланды" />
+                <span id="netherlands"></span>
             </div>
 
             <button class="btn-copy" onclick="copyLink(`${id}`)">Скопировать ссылку</button>
         </div>
 
         <!-- Германия -->
-        <div class="card">
+        <div class="card" id="germany">
             <div class="card-title">
                 <span>🇩🇪 Германия</span>
                 <span class="config-count" id="count-germany">Загрузка...</span>
@@ -71,14 +71,14 @@
             <div class="card-desc">no information available</div>
 
             <div class="qr-container">
-                <img src=`${qrurl}${configUrls.germany}` alt="QR Германия" />
+                <span id="germany"></span>
             </div>
 
             <button class="btn-copy" onclick="copyLink(`${id}`)">Скопировать ссылку</button>
         </div>
 
         <!--  Польша -->
-        <div class="card">
+        <div class="card" id="poland">
             <div class="card-title">
                 <span>🇵🇱 Польша</span>
                 <span class="config-count" id="count-poland">Загрузка...</span>
@@ -86,7 +86,7 @@
             <div class="card-desc">no information available</div>
 
             <div class="qr-container">
-                <img src=`${qrurl}${configUrls.poland}` alt="QR Польша" />
+                <span id="poland"></span>
             </div>
 
             <button class="btn-copy" onclick="copyLink(`${id}`)">Скопировать ссылку</button>

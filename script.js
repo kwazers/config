@@ -46,12 +46,12 @@
     };
 
     // Функция копирования ссылки в буфер обмена
-function copyLink(elementId) {
-    const countryKey = elementId.replace('count-', '');
-    const ram = configUrls[countryKey];
-    // 3. Создаем элемент и копируем (ваш рабочий код)
+function copyLink(buttonElement) {
+    const card = buttonElement.closest('.card');
+    const countryKey = card.id;
+    const finalUrl = configUrls[countryKey];
     const el = document.createElement('textarea');
-    el.value = ram;// Передаем сюда готовую склеенную ссылку
+    el.value = finalUrl;// Передаем сюда готовую склеенную ссылку
     document.body.appendChild(el);
     el.select();
     document.execCommand('copy');
@@ -86,4 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateLinkOnPage('finland');      // Создаст QR для Финляндии внутри <span id="finland">
     updateLinkOnPage('poland');       // Создаст QR для Польши внутри <span id="poland">
     updateLinkOnPage('netherlands');  // Создаст QR для Нидерландов внутри <span id="netherlands">
+    updateLinkOnPage('germany');
+    updateLinkOnPage('russia');
+    
 });
