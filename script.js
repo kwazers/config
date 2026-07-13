@@ -102,12 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Находим все карточки на странице
+    // Ищем абсолютно все карточки на странице
     const allCards = document.querySelectorAll('.card');
 
     allCards.forEach(card => {
-        const countryKey = card.id;
-        const nameSpan = card.querySelector('.card-title span:first-child');
+        const countryKey = card.id; // Получае
+        const nameSpan = card.querySelector('.card-name');
         nameSpan.innerText = countryNames[countryKey];
     });
-}
+}); 
