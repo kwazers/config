@@ -13,15 +13,18 @@ body {
 
 .container {
     display: grid;
+    /* На ПК карточки будут вставать в несколько колонок автоматически (минимум 280px каждая) */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Заменяем padding на gap, чтобы между карточками были ровные отступы */
     background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 12px;
     padding: 30px;
-    max-width: 480px;
+    /* Увеличиваем максимальную ширину, чтобы на ПК помещалось больше карточек в ряд */
+    max-width: 1000px;
     width: 100%;
-    text-align: center;
     box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    box-sizing: border-box; /* Чтобы padding не раздувал ширину */
 }
 
 h1 {
@@ -46,11 +49,15 @@ h1 {
     border: 1px solid #30363d;
     border-radius: 8px;
     padding: 20px;
-    margin-bottom: 25px;
+    /* Убираем margin-bottom, так как сетка GRID теперь сама делает отступы через gap */
+    margin-bottom: 0;
     position: relative;
+    /* Чтобы flex-бокс работал, исправляем display */
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .card-title {
@@ -81,20 +88,23 @@ h1 {
 }
 
 .qr-container {
-    text-align: center;
+    display: flex; /* Переключаем на flex для идеального центрирования картинки */
+    justify-content: center;
+    align-items: center;
     background-color: #ffffff;
     padding: 12px;
     border-radius: 8px;
-    display: block;
     margin: 0 auto 20px auto;
     width: 160px;
     height: 160px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-sizing: border-box;
 }
 
     .qr-container img {
-        max-width: 100%; /* Картинка сжимается под размер экрана смартфона */
-        height: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Картинка идеально впишется в белое окошко 160x160 */
         display: block;
     }
 
@@ -162,3 +172,19 @@ footer {
         }
 
 
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Уменьшаем отступы по краям экрана смартфона */
+    }
+
+    .container {
+        /* На смартфонах принудительно выстраиваем всё в одну аккуратную колонку */
+        grid-template-columns: 1fr;
+        padding: 20px 15px; /* Делаем внутренние отступы компактнее */
+    }
+
+    .toast {
+        width: 85%; /* Всплывающая плашка на телефоне будет шире и удобнее */
+        text-align: center;
+    }
+}
