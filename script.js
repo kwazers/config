@@ -7,7 +7,8 @@ const configUrls = {
     netherlands: `${siteUrl}netherlands-config.txt`,
     germany: `${siteUrl}germany-config.txt`,
     poland: `${siteUrl}poland-config.txt`,
-    tiktok: `${siteUrl}tiktok-config.txt`
+    tiktok: `${siteUrl}tiktok-config.txt`,
+    mobile-night-none-frag: `${siteUrl}mobile-night-none-frag-config.txt`
 };
 
 const countryNames = {
@@ -16,7 +17,8 @@ const countryNames = {
     netherlands: "🇳🇱 Нидерланды",
     germany: "🇩🇪 Германия",
     poland: "🇵🇱 Польша",
-    tiktok: "🎵 TikTok"
+    tiktok: "🎵 TikTok",
+    mobile-night-none-frag: `Белые списки`
 };
 
 // 1. УНИВЕРСАЛЬНАЯ ФУНКЦИЯ КОПИРОВАНИЯ
