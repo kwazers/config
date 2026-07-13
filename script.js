@@ -65,3 +65,25 @@ function copyLink(elementId) {
         toast.classList.remove('show');
     }, 2000);
 }
+function updateLinkOnPage(countryKey) {
+    // 1. Находим нужный span по его id (например, 'finland' или 'poland')
+    const linkSpan = document.getElementById(`${countryKey}`);
+
+    if (linkSpan) {
+        // 2. Получаем полный адрес файла для конкретной страны
+        const fullUrl = configUrls[countryKey];
+
+        // 3. Безопасно кодируем ссылку, чтобы сервис QR-кодов её прочитал
+        const encodedUrl = encodeURIComponent(fullUrl);
+
+        // 4. Вставляем готовую картинку. Путь и описание (alt) формируются автоматически!
+        linkSpan.innerHTML = `<img src="${qrurl}${encodedUrl}" alt="QR ${countryKey}" />`;
+    }
+}
+
+// Запускаем автоматическое создание QR-кодов при загрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
+    updateLinkOnPage('finland');      // Создаст QR для Финляндии внутри <span id="finland">
+    updateLinkOnPage('poland');       // Создаст QR для Польши внутри <span id="poland">
+    updateLinkOnPage('netherlands');  // Создаст QR для Нидерландов внутри <span id="netherlands">
+});
