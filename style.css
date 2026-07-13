@@ -12,6 +12,8 @@ body {
 }
 
 .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 12px;
@@ -46,6 +48,9 @@ h1 {
     padding: 20px;
     margin-bottom: 25px;
     position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .card-title {
@@ -58,7 +63,7 @@ h1 {
     justify-content: space-between;
 }
 
-.config-count {
+.delay {
     font-size: 11px;
     background-color: #30363d;
     color: #8b949e;
@@ -88,8 +93,8 @@ h1 {
 }
 
     .qr-container img {
-        width: 160px;
-        height: 160px;
+        max-width: 100%; /* Картинка сжимается под размер экрана смартфона */
+        height: auto;
         display: block;
     }
 
