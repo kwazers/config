@@ -4,14 +4,13 @@
     const qrurl = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data="
     const siteUrl = "https://raw.githubusercontent.com/kwazers/config/refs/heads/main/";
     const configUrls = {
-        finland: "${siteUrl}finland-config.txt",
-        russia: "${siteUrl}russian-config.txt",
-        netherlands: "${siteUrl}netherlands-config.txt",
-        germany: "${siteUrl}germany-config.txt",
-        poland: "${siteUrl}poland-config.txt",
-        tiktok: "${siteUrl}tiktok-config.txt"
+        finland: `${siteUrl}finland-config.txt`,
+        russia: `${siteUrl}russia-config.txt`,
+        netherlands: `${siteUrl}netherlands-config.txt`,
+        germany: `${siteUrl}germany-config.txt`,
+        poland: `${siteUrl}poland-config.txt`,
+        tiktok: `${siteUrl}tiktok-config.txt`
     };
-
 
     async function countConfigs(url, elementId) {
         try {
@@ -47,13 +46,12 @@
     };
 
     // Функция копирования ссылки в буфер обмена
-function copyLink(CountryText) {
-    // 2. Склеиваем глобальную переменную и уникальный текст из кнопки
-    const urlcopy = `${siteUrl}${CountryText}`;
+function copyLink(UrlText) {
+ 
 
     // 3. Создаем элемент и копируем (ваш рабочий код)
     const el = document.createElement('textarea');
-    el.value = urlcopy; // Передаем сюда готовую склеенную ссылку
+    el.value = UrlText; // Передаем сюда готовую склеенную ссылку
     document.body.appendChild(el);
     el.select();
     document.execCommand('copy');
