@@ -1,6 +1,6 @@
 #profile-title:🇫🇮 github @kwazers
 #announce:free links
-#profile-web-page-url:https://kwazers.github.io/config/
+#profile-web-page-url:https://kwazers.github.io/config/web//
 #support-url:https://t.me/zxc_infarkt
 vless://1fef5248-fdd2-40d6-b3b9-6c33d4e74724@45.144.52.76:7443?security=reality&type=tcp&headerType=&flow=xtls-rprx-vision&path=&host=&sni=_custom_&fp=qq&pbk=8wD0IhR27ftD5LyJDq9CaFzi6DgA4vFtB-UP6QIdWVc&sid=e8ca5079a5e91481#🇫🇮Хельсинки
 vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@109.120.184.49:7443?encryption=none&security=reality&type=xhttp&sni=fltwo.nice-chat.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&path=%2F#🇫🇮Хельсинки

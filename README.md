@@ -7,7 +7,7 @@
 
 
 ## Перенесенно на сайт
- [клик*](https://kwazers.github.io/config/)
+ [клик*](https://kwazers.github.io/config/web//)
 
  
 ## 📍 Доступные локации и подписки
