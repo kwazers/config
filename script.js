@@ -10,7 +10,15 @@
         germany: `${siteUrl}germany-config.txt`,
         poland: `${siteUrl}poland-config.txt`,
         tiktok: `${siteUrl}tiktok-config.txt`
-    };
+};
+const countryNames = {
+    finland: "🇫🇮 Финляндия",
+    russia: "🇷🇺 Россия",
+    netherlands: "🇳🇱 Нидерланды",
+    germany: "🇩🇪 Германия",
+    poland: "🇵🇱 Польша",
+    tiktok: "🎵 TikTok"
+};
 
     async function countConfigs(url, elementId) {
         try {
@@ -90,3 +98,16 @@ document.addEventListener("DOMContentLoaded", () => {
     updateLinkOnPage('russia');
     
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Находим все карточки на странице
+    const allCards = document.querySelectorAll('.card');
+
+    allCards.forEach(card => {
+        const countryKey = card.id;
+        const nameSpan = card.querySelector('.card-title span:first-child');
+        nameSpan.innerText = countryNames[countryKey];
+    });
+}
