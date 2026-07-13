@@ -1,165 +1,127 @@
+/* Общие настройки темы */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #0d1117;
     color: #c9d1d9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     margin: 0;
     padding: 20px;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
 }
 
 .container {
-    display: grid;
-    /* На ПК карточки будут вставать в несколько колонок автоматически (минимум 280px каждая) */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px; /* Заменяем padding на gap, чтобы между карточками были ровные отступы */
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 12px;
-    padding: 30px;
-    /* Увеличиваем максимальную ширину, чтобы на ПК помещалось больше карточек в ряд */
     max-width: 1000px;
-    width: 100%;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-    box-sizing: border-box; /* Чтобы padding не раздувал ширину */
+    width: 1000px;
 }
 
 h1 {
-    color: #f0f6fc;
-    font-size: 24px;
+    text-align: center;
+    color: #ffffff;
     margin-bottom: 5px;
 }
 
 .subtitle {
+    text-align: center;
     color: #8b949e;
-    font-size: 14px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
-/* Список подписок */
+/* Сетка для карточек */
 .subscription-list {
-    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
+/* Стили карточки */
 .card {
-    background-color: #21262d;
+    background-color: #161b22;
     border: 1px solid #30363d;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 20px;
-    /* Убираем margin-bottom, так как сетка GRID теперь сама делает отступы через gap */
-    margin-bottom: 0;
-    position: relative;
-    /* Чтобы flex-бокс работал, исправляем display */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.card-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #f0f6fc;
-    margin-bottom: 6px;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
+    transition: transform 0.2s, border-color 0.2s;
 }
 
-.delay {
-    font-size: 11px;
-    background-color: #30363d;
+    .card:hover {
+        transform: translateY(-2px);
+        border-color: #58a6ff;
+    }
+
+/* Шапка карточки */
+.card-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.delay, .config-count {
+    font-size: 0.85rem;
+    background-color: #21262d;
+    padding: 4px 8px;
+    border-radius: 6px;
     color: #8b949e;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-weight: normal;
-    border: 1px solid #444c56;
 }
 
 .card-desc {
+    font-size: 0.9rem;
     color: #8b949e;
-    font-size: 13.5px;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
 }
 
+/* Контейнер QR-кода */
 .qr-container {
-    display: flex; /* Переключаем на flex для идеального центрирования картинки */
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
-    padding: 12px;
-    border-radius: 8px;
-    margin: 0 auto 20px auto;
-    width: 160px;
-    height: 160px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
 }
 
     .qr-container img {
         width: 100%;
         height: 100%;
-        object-fit: contain; /* Картинка идеально впишется в белое окошко 160x160 */
         display: block;
     }
 
+/* Кнопка копирования */
 .btn-copy {
-    display: block;
-    background-color: #1EBA60;
-    color: white;
-    border: none;
     width: 100%;
-    text-align: center;
-    font-weight: bold;
-    padding: 12px;
+    background-color: #238636;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
     border-radius: 6px;
-    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(30, 186, 96, 0.2);
-    transition: background-color 0.2s, transform 0.1s;
+    transition: background-color 0.2s;
 }
 
     .btn-copy:hover {
-        background-color: #169a4e;
+        background-color: #2ea043;
     }
 
-    .btn-copy:active {
-        transform: scale(0.98);
-    }
-
-/* Всплывающее уведомление */
-.toast {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background-color: #238636;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 6px;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    z-index: 9999;
-}
-
-    .toast.show {
-        transform: translateX(-50%) translateY(0);
-        opacity: 1;
-    }
-
+/* Подвал */
 footer {
-    margin-top: 30px;
-    font-size: 13px;
+    text-align: center;
     color: #8b949e;
+    font-size: 0.9rem;
     border-top: 1px solid #30363d;
-    padding-top: 15px;
+    padding-top: 20px;
 }
 
     footer a {
@@ -171,20 +133,26 @@ footer {
             text-decoration: underline;
         }
 
+/* ВСплывающее уведомление (Toast) */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: #2ea043;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+    z-index: 9999;
+}
 
-@media (max-width: 600px) {
-    body {
-        padding: 10px; /* Уменьшаем отступы по краям экрана смартфона */
+    .toast.show {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+        visibility: visible;
     }
-
-    .container {
-        /* На смартфонах принудительно выстраиваем всё в одну аккуратную колонку */
-        grid-template-columns: 1fr;
-        padding: 20px 15px; /* Делаем внутренние отступы компактнее */
-    }
-
-    .toast {
-        width: 85%; /* Всплывающая плашка на телефоне будет шире и удобнее */
-        text-align: center;
-    }
-} 
