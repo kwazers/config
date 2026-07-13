@@ -67,4 +67,4 @@ function copyLink(CountryText, buttonElement) {
                 buttonElement.innerText = originalText;
                 buttonElement.disabled = false;
             }, 2000);
-        }
+        
