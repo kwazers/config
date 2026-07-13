@@ -47,24 +47,23 @@
     };
 
     // Функция копирования ссылки в буфер обмена
- 
-function copyLink(CountryText, buttonElement) {
-    // К переменной приписываем уникальный текст
+function copyLink(CountryText) {
+    // 2. Склеиваем глобальную переменную и уникальный текст из кнопки
     const urlcopy = `${siteUrl}${CountryText}`;
 
-    // Копируем готовую строку в буфер
-    navigator.clipboard.writeText(urlcopy).then(() => {
-        // Проверяем, передана ли кнопка в функцию
-        if (buttonElement) {
-            const originalText = buttonElement.innerText;
+    // 3. Создаем элемент и копируем (ваш рабочий код)
+    const el = document.createElement('textarea');
+    el.value = urlcopy; // Передаем сюда готовую склеенную ссылку
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
 
-            // Меняем текст на кнопке для уведомления
-            buttonElement.innerText = "Ссылка скопирована!";
-            buttonElement.disabled = true; // Отключаем кнопку на время
+    // 4. Показываем ваш toast-уведомление
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
 
-            // Возвращаем исходный текст через 2 секунды
-            setTimeout(() => {
-                buttonElement.innerText = originalText;
-                buttonElement.disabled = false;
-            }, 2000);
-        
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2000);
+}
