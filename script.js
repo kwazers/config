@@ -47,18 +47,24 @@
     };
 
     // Функция копирования ссылки в буфер обмена
-    function copyLink(url) {
-        const el = document.createElement('textarea');
-    el.value = url;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
+ 
+function copyLink(CountryText, buttonElement) {
+    // К переменной приписываем уникальный текст
+    const urlcopy = `${siteUrl}${CountryText}`;
 
-    const toast = document.getElementById('toast');
-    toast.classList.add('show');
-        
-        setTimeout(() => {
-        toast.classList.remove('show');
-        }, 2000);
-    }
+    // Копируем готовую строку в буфер
+    navigator.clipboard.writeText(urlcopy).then(() => {
+        // Проверяем, передана ли кнопка в функцию
+        if (buttonElement) {
+            const originalText = buttonElement.innerText;
+
+            // Меняем текст на кнопке для уведомления
+            buttonElement.innerText = "Ссылка скопирована!";
+            buttonElement.disabled = true; // Отключаем кнопку на время
+
+            // Возвращаем исходный текст через 2 секунды
+            setTimeout(() => {
+                buttonElement.innerText = originalText;
+                buttonElement.disabled = false;
+            }, 2000);
+        }
