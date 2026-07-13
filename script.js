@@ -46,12 +46,12 @@
     };
 
     // Функция копирования ссылки в буфер обмена
-function copyLink(UrlText) {
- 
+function copyLink(elementId) {
+    const countryKey = elementId.replace('count-', '');
 
     // 3. Создаем элемент и копируем (ваш рабочий код)
     const el = document.createElement('textarea');
-    el.value = UrlText; // Передаем сюда готовую склеенную ссылку
+    el.value = configUrls[countryKey];; // Передаем сюда готовую склеенную ссылку
     document.body.appendChild(el);
     el.select();
     document.execCommand('copy');
