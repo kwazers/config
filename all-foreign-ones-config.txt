@@ -1,4 +1,4 @@
-profile-title:Все иностранные github @kwazers
+#profile-title:Все иностранные github @kwazers
 #announce:none
 #profile-web-page-url:https://kwazers.github.io/config/web//
 #support-url:https://t.me/zxc_infarkt
