@@ -1,6 +1,6 @@
 #profile-title: mobile night none frag github @kwazers
 #announce:none fragmentation 
-#profile-web-page-url:https://kwazers.github.io/config/web//
+#profile-web-page-url:https://config-8ha.pages.dev/
 #support-url:https://t.me/zxc_infarkt
 vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@79.174.92.178:22?encryption=none&security=reality&type=grpc&sni=ads.x5.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&serviceName=grpc#🇵🇱Варшава
 vless://822cae5e-2fbf-4d4d-8f20-e9c89593e1ee@79.174.92.232:22?encryption=none&security=reality&type=grpc&sni=ads.x5.ru&fp=firefox&pbk=J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs&sid=6b2f4e6ac9b1d2f0&serviceName=grpc#🇵🇱Варшава
